@@ -1,4 +1,5 @@
 # Import API class from pexels_api package
+from logging import raiseExceptions
 from pexels_api import API
 
 import requests
@@ -19,7 +20,8 @@ def pexelsearch(keyword,IMAGES_DIR):
     # Get photo entries
     photos = api.get_entries()
     if len(photos)<1:
-        print("IMAGES NOT FOUND FOR GIVEN KEYWORD!!!")
+        # print("IMAGES NOT FOUND FOR GIVEN KEYWORD!!!")
+        raise Exception("Image not found for the given keyword. please try other keywords.")
     else:
         # Loop the five photos
         for photo in photos:
@@ -48,4 +50,4 @@ if __name__ == "__main__":
     from pathlib import Path
     BASE_DIR=Path.cwd()
     IMAGES_DIR = BASE_DIR/"images"
-    pexelsearch("dogo",IMAGES_DIR)
+    pexelsearch("rip",IMAGES_DIR)
