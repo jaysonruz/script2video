@@ -1,3 +1,30 @@
+#custom folders to not include
+/images
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Editors
 .vscode/
 .idea/
